@@ -1,44 +1,49 @@
 {
-    "name": "narwhal",
-    "displayName": "Narwhal",
-    "description": "Narwhal syntax highlight",
-    "version": "0.0.1",
-    "publisher": "quantumsheep",
-    "engines": {
-        "vscode": "^1.32.0"
-    },
-    "categories": [
-        "Programming Languages"
-    ],
-    "contributes": {
-        "languages": [
-            {
-                "id": "narwhal",
-                "aliases": [
-                    "NARWHAL",
-                    "narwhal"
-                ],
-                "extensions": [
-                    ".nw",
-                    ".narwhal"
-                ],
-                "configuration": "./language-configuration.json"
-            }
-        ],
-        "grammars": [
-            {
-                "language": "narwhal",
-                "scopeName": "source.narwhal",
-                "path": "./syntaxes/narwhal.tmLanguage.json"
-            }
-        ]
-    },
-    "bugs": {
-        "url": "https://github.com/quantumsheep/vscode-narwhal/issues"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/quantumsheep/vscode-narwhal.git"
-    },
-    "homepage": "https://github.com/quantumsheep/vscode-narwhal/blob/master/README.md"
+	"name": "narwhal",
+	"displayName": "Narwhal",
+	"description": "Narwhal syntax highlight",
+	"version": "0.0.1",
+	"publisher": "quantumsheep",
+	"engines": {
+		"vscode": "^1.32.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "narwhal",
+				"aliases": [
+					"NARWHAL",
+					"narwhal"
+				],
+				"extensions": [
+					".nw",
+					".narwhal"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "narwhal",
+				"scopeName": "source.narwhal",
+				"path": "./syntaxes/narwhal.tmLanguage.json"
+			}
+		]
+	},
+	"bugs": {
+		"url": "https://github.com/quantumsheep/vscode-narwhal/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/quantumsheep/vscode-narwhal.git"
+	},
+	"homepage": "https://github.com/quantumsheep/vscode-narwhal/blob/master/README.md",
+	"__metadata": {
+		"id": "8c26e25e-accf-40c0-889a-2f941a874b3e",
+		"publisherDisplayName": "QuantumSheep",
+		"publisherId": "304667aa-debf-4eb7-a9d6-2f4e2d8ec438"
+	}
 }
