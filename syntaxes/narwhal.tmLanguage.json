@@ -1,0 +1,150 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "narwhal",
+	"scopeName": "source.narwhal",
+	"patterns": [
+		{
+			"name": "keyword.control.narwhal",
+			"match": "\\b(if|else|do|while|for|loop|break|continue|return|extern|new)\\b"
+		},
+		{
+			"name": "storage.type.narwhal",
+			"match": "\\b(fn|const|let|void|bool|int1|int8|int16|int32|int64|int128|class|null)\\b"
+		},
+		{
+			"name": "comment.line.diese.narwhal",
+			"begin": "#",
+			"end": "(?=\\n)",
+			"patterns": [
+				{
+					"match": "(\\\\)\\n"
+				}
+			]
+		},
+		{
+			"name": "entity.name.type.narwhal",
+			"match": "\\b(([A-Z]|_[A-Z])[a-zA-Z_0-9]*)\\b"
+		},
+		{
+			"name": "entity.name.function.narwhal",
+			"match": "\\b([a-zA-Z_][a-zA-Z_0-9]*)(?=\\()"
+		},
+		{
+			"name": "variable.narwhal",
+			"match": "\\b([a-zA-Z_][a-zA-Z_0-9]*)\\b"
+		},
+		{
+			"match": "->",
+			"name": "entity.name.function.type.narwhal"
+		},
+		{
+			"match": "%=|\\+=|-=|\\*=",
+			"name": "keyword.operator.assignment.compound.narwhal"
+		},
+		{
+			"match": "!=|<=|>=|==|<|>",
+			"name": "keyword.operator.comparison.narwhal"
+		},
+		{
+			"match": "&&|!|\\|\\|",
+			"name": "keyword.operator.logical.narwhal"
+		},
+		{
+			"match": "\\.|::",
+			"name": "punctuation.separator.narwhal"
+		},
+		{
+			"match": "=",
+			"name": "keyword.operator.assignment.narwhal"
+		},
+		{
+			"match": "%|\\*|/|-|\\+",
+			"name": "keyword.operator.narwhal"
+		},
+		{
+			"match": "\\b(true|false)\\b",
+			"name": "constant.language.narwhal"
+		},
+		{
+			"match": "\\b((0(x|X)[0-9a-fA-F]([0-9a-fA-F']*[0-9a-fA-F])?)|(0(b|B)[01]([01']*[01])?)|(([0-9]([0-9']*[0-9])?\\.?[0-9]*([0-9']*[0-9])?)|(\\.[0-9]([0-9']*[0-9])?))((e|E)(\\+|-)?[0-9]([0-9']*[0-9])?)?)(F|f)?\\b",
+			"name": "constant.numeric.narwhal"
+		},
+		{
+			"begin": "\\(",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.section.parens.begin.bracket.round.narwhal"
+				}
+			},
+			"end": "\\)|(?=//)|(?=/\\*(?!.*\\\\\\s*\\n))|(?<!\\\\)(?=\\n)",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.section.parens.end.bracket.round.narwhal"
+				}
+			},
+			"patterns": [
+				{
+					"include": "#preprocessor-rule-conditional-line"
+				}
+			]
+		},
+		{
+			"begin": "{",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.section.block.begin.bracket.curly.narwhal"
+				}
+			},
+			"end": "}|(?=\\s*#\\s*(?:elif|else|endif)\\b)",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.section.block.end.bracket.curly.narwhal"
+				}
+			},
+			"name": "meta.block.c",
+			"patterns": [
+				{
+					"include": "#block_innards"
+				}
+			]
+		},
+		{
+			"match": "(\\[)|(\\])",
+			"captures": {
+				"1": {
+					"name": "punctuation.definition.begin.bracket.square.narwhal"
+				},
+				"2": {
+					"name": "punctuation.definition.end.bracket.square.narwhal"
+				}
+			}
+		},
+		{
+			"name": "string.quoted.double.narwhal",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.narwhal",
+					"match": "\\\\."
+				}
+			]
+		},
+		{
+			"name": "string.quoted.single.narwhal",
+			"begin": "'",
+			"end": "'",
+			"patterns": [
+				{
+					"name": "constant.character.escape.narwhal",
+					"match": "\\\\."
+				}
+			]
+		},
+		{
+			"name": "keyword.control.directive.narwhal",
+			"begin": "^##",
+			"end": "(?=\\n)"
+		}
+	]
+}

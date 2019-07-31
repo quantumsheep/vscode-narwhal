@@ -1,0 +1,44 @@
+{
+    "name": "narwhal",
+    "displayName": "Narwhal",
+    "description": "Narwhal syntax highlight",
+    "version": "0.0.1",
+    "publisher": "quantumsheep",
+    "engines": {
+        "vscode": "^1.32.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "narwhal",
+                "aliases": [
+                    "NARWHAL",
+                    "narwhal"
+                ],
+                "extensions": [
+                    ".nw",
+                    ".narwhal"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "narwhal",
+                "scopeName": "source.narwhal",
+                "path": "./syntaxes/narwhal.tmLanguage.json"
+            }
+        ]
+    },
+    "bugs": {
+        "url": "https://github.com/quantumsheep/vscode-narwhal/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/quantumsheep/vscode-narwhal.git"
+    },
+    "homepage": "https://github.com/quantumsheep/vscode-narwhal/blob/master/README.md"
+}
