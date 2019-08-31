@@ -9,7 +9,7 @@
 		},
 		{
 			"name": "storage.type.narwhal",
-			"match": "\\b(fn|const|let|void|bool|int1|int8|int16|int32|int64|int128|class|null|static)\\b"
+			"match": "\\b(fn|const|let|void|bool|int1|int8|int16|int32|int64|int128|double|class|null|static)\\b"
 		},
 		{
 			"name": "comment.line.diese.narwhal",
